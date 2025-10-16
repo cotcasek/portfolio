@@ -1,0 +1,104 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.funnel-display-<uniquifier> {
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f6f4ef;
+    color: #2c2c2c;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #2e2a24;
+    color: #fdfcf9;
+    font-family: "Funnel Display", sans-serif;
+}
+
+/* GRID LAYOUT */
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    min-height: 80vh;
+}
+
+.grid-item {
+    flex: 1 1 45%;
+    min-width: 300px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.grid-item h2 {
+    color: #f5f3ee;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-family: "Funnel Display", sans-serif;
+}
+
+/* Earth tone backgrounds */
+.grid-item:nth-child(1) { background-color: #3b5d40; } /* forest green */
+.grid-item:nth-child(2) { background-color: #6b4226; } /* brown */
+.grid-item:nth-child(3) { background-color: #924d2c; } /* rust */
+.grid-item:nth-child(4) { background-color: #3f454d; } /* slate gray */
+
+.grid-item:nth-child(1) { background-color: #925E78; } /* purple... change to wine? */
+.grid-item:nth-child(2) { background-color: #347FC4; } /* blue */
+.grid-item:nth-child(3) { background-color: #EF8354; } /* orange */
+.grid-item:nth-child(4) { background-color: #3C896D; } /* green*/
+
+
+/* Hover effect */
+.grid-item:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* CONTENT SECTIONS */
+main {
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+.content-section h3 {
+    color: #2e2a24;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: "Funnel Display", sans-serif;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
