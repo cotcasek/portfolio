@@ -13,8 +13,28 @@
   font-style: normal;
 }
 
+/*.alumni-sans-pinstripe-regular {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alumni-sans-pinstripe-regular-italic {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+*/
+.quicksand-<uniquifier> {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+    font-family: "Quicksand", Arial, sans-serif;
     background-color: #f6f4ef;
     color: #2c2c2c;
     line-height: 1.6;
@@ -29,51 +49,102 @@ header {
     font-family: "Funnel Display", sans-serif;
 }
 
+h1 {
+    /*letter-spacing: .2em;*/
+}
+
+#title{
+    font-size: 2em;
+    letter-spacing: .2em;
+}
+
+#subtitle{
+    font-size: 1.6em;
+    letter-spacing: .2em;
+}
+
+.description{
+    font-style: italic;
+}
+
+.backToTop {
+    font-size: .9rem;
+}
+
+a:link {
+    color: darkgrey;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
 /* GRID LAYOUT */
 #grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    width: 100%;
-    min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 5rem;              /* Adjust height as needed */
+  gap: .15rem;                  /* small gap between items */
+  /*margin: .5rem;*/
 }
 
 .grid-item {
-    flex: 1 1 45%;
-    min-width: 300px;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  /*border-radius: 8px;*/
 }
 
+/* Label styling */
 .grid-item h2 {
-    color: #f5f3ee;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    font-family: "Funnel Display", sans-serif;
+  color: #f5f3ee;
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+  font-family: "Funnel Display", sans-serif;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
-/* Earth tone backgrounds */
-.grid-item:nth-child(1) { background-color: #3b5d40; } /* forest green */
-.grid-item:nth-child(2) { background-color: #6b4226; } /* brown */
-.grid-item:nth-child(3) { background-color: #924d2c; } /* rust */
-.grid-item:nth-child(4) { background-color: #3f454d; } /* slate gray */
+/*925E78*/
 
-.grid-item:nth-child(1) { background-color: #925E78; } /* purple... change to wine? */
+/* Backgrounds — refined palette */
+.grid-item:nth-child(1) { background-color: #8A1C40; } /* wine red */
+/*.grid-item:nth-child(1) { background-color: #925E78; }*/
 .grid-item:nth-child(2) { background-color: #347FC4; } /* blue */
 .grid-item:nth-child(3) { background-color: #EF8354; } /* orange */
-.grid-item:nth-child(4) { background-color: #3C896D; } /* green*/
-
+.grid-item:nth-child(4) { background-color: #3C896D; } /* green */
 
 /* Hover effect */
 .grid-item:hover {
-    transform: scale(1.03);
-    filter: brightness(1.1);
+  transform: scale(1.05);
+  filter: brightness(1.15);
 }
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 800px) {
+  #grid {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .grid-item {
+    flex: 1 1 45%;
+    height: 30vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-item {
+    flex: 1 1 100%;
+    height: 25vh;
+  }
+}
+
 
 /* CONTENT SECTIONS */
 main {
@@ -102,3 +173,205 @@ main {
 html {
     scroll-behavior: smooth;
 }
+
+/* --- SLIDESHOW --- */
+.slideshow-container {
+  position: relative;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slide img:hover {
+  transform: scale(1.02);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.4;} 
+  to {opacity: 1;}
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+
+
+
+
+
+
+.project {
+  margin: 2rem 0;
+}
+
+.project-info p {
+  margin-bottom: 0.5rem;
+}
+
+.project-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+
+}
+
+/*.project-thumbnails img {
+  width: 30%;
+  max-width: 250px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  aspect-ratio: 5 / 3; 
+  /* Keeps consistent thumbnail boxes */
+  /*object-fit: cover;   */
+  /* Ensures images fill box without distortion */
+  /*transform-origin: center center; */
+  /* ensures zoom happens from center */
+/*}*/
+
+/*.project-thumbnails img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 2; 
+}*/
+
+
+/* Thumbnail container */
+.thumb {
+  position: relative;
+  width: 22%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Image inside thumbnail */
+/* Thumbnail container */
+.thumb {
+  position: relative;
+  width: 48%;          /* two thumbnails per row with a small gap */
+  aspect-ratio: 4 / 3; /* maintains consistent box shape */
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Images inside thumbnail */
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills box without distortion */
+  transition: filter 0.3s ease, transform 0.5s ease;
+  display: block;
+}
+
+/* Overlay text */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Hover effects */
+.thumb:hover img {
+  filter: grayscale(100%) brightness(60%);
+  transform: scale(1.05);
+}
+
+.thumb:hover .overlay-text {
+  opacity: 1;
+}
+
+/* Make thumbnails stack nicely on small screens */
+@media (max-width: 600px) {
+  .thumb {
+    width: 100%; /* single column on narrow screens */
+    margin-bottom: 10px;
+  }
+}
+
+
+.backToTop {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+
+.backToTop:hover {
+  text-decoration: underline;
+}
+
+

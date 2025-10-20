@@ -1,62 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clare Otcasek | Map & Data Portfolio</title>
-    <link rel="stylesheet" href="main.css">
-    
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clare Otcasek | Portfolio</title>
+  <link rel="stylesheet" href="main.css">
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Clare Otcasek | Portfolio</h1>
-    </header>
+  <header>
+    <div id='title'>Clare Otcasek</div>
+    <!-- <br> -->
+    <div id='subtitle'> Cartography & Data Visualization </div>
+  </header>
 
-    <!-- GRID NAVIGATION -->
-    <section id="grid">
-        <div class="grid-item" data-target="webMaps">
-            <h2>Web Maps</h2>
-        </div>
-        <div class="grid-item" data-target="printMaps">
-            <h2>Print Maps</h2>
-        </div>
-        <div class="grid-item" data-target="visualizations">
-            <h2>Data Visualizations</h2>
-        </div>
-        <div class="grid-item" data-target="about">
-            <h2>About Me</h2>
-        </div>
+  <!-- GRID NAVIGATION -->
+  <section id="grid">
+    <div class="grid-item" data-target="webMaps"><h2>Web Maps</h2></div>
+    <div class="grid-item" data-target="printMaps"><h2>Print Maps</h2></div>
+    <div class="grid-item" data-target="visualizations"><h2>Data Visualizations</h2></div>
+    <div class="grid-item" data-target="about"><h2>About Me</h2></div>
+  </section>
+
+  <!-- CONTENT SECTIONS -->
+  <main>
+
+    <!-- WEB MAPS -->
+    <section id="webMaps" class="content-section">
+      <h3>Web Maps</h3>
+      <p class="description">Interactive and dynamic web-based map projects built using JavaScript, Mapbox, and ArcGIS.</p>
+
+     <!-- Project block -->
+<div class="project">
+  <div class="project-info">
+    <p><b>Atlas of Ungulate Migrations (contributor)</b><br>
+      <a href="https://www.cms.int/gium/migration-atlas" target="_blank">
+        Atlas of Ungulate Migration, hosted by Convention on Migratory Species (CMS)
+      </a>
+    </p>
+  </div>
+  <div class="project-thumbnails">
+    <div class="thumb">
+      <img src="img/giumCover.png" alt="GIUM Global map webpage example" onclick="openImage(this)">
+      <span class="overlay-text">Global migration map</span>
+    </div>
+    <div class="thumb">
+      <img src="img/giumSpecies.png" alt="GIUM Migratory species webpage example" onclick="openImage(this)">
+      <span class="overlay-text">Species details</span>
+    </div>
+    <div class="thumb">
+      <img src="img/giumModal.png" alt="GIUM Species info modal example" onclick="openImage(this)">
+      <span class="overlay-text">Species info modal</span>
+    </div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="project-info">
+    <p><b>Western Migrations (contributor)</b><br>
+      Expected launch Q4 2025
+    </p>
+  </div>
+  <div class="project-thumbnails">
+    <div class="thumb">
+      <img src="img/wmLanding.png" alt="Western migrations preview" onclick="openImage(this)">
+      <span class="overlay-text">Landing page</span>
+    </div>
+    <div class="thumb">
+      <img src="img/wmList.png" alt="Western migrations list pane" onclick="openImage(this)">
+      <span class="overlay-text">Land management list view</span>
+    </div>
+    <div class="thumb">
+      <img src="img/wmSpecies.png" alt="Western migrations herd details" onclick="openImage(this)">
+      <span class="overlay-text">Herd detail view</span>
+    </div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="project-info">
+    <p><b>Desert Daze Interactive Map (sole author)</b><br>
+      <a href="https://cotcasek.github.io/WebMapping/DDazeInteractiveMap/DDazeLayout.html#" target="_blank">
+        Desert Daze map
+      </a> (published 2023, not maintained)
+    </p>
+  </div>
+  <div class="project-thumbnails">
+    <div class="thumb">
+      <img src="img/ddazeMap.png" alt="Desert Daze overview" onclick="openImage(this)">
+      <span class="overlay-text">Map overview</span>
+    </div>
+    <div class="thumb">
+      <img src="img/ddazeWithSidebar.png" alt="Desert Daze UI example" onclick="openImage(this)">
+      <span class="overlay-text">Interface layout</span>
+    </div>
+  </div>
+</div>
+
+<a href="#" class="backToTop">Back to top ↑</a>
+</section>
+
+<!-- PRINT MAPS -->
+<section id="printMaps" class="content-section">
+  <h3>Print Maps</h3>
+  <p class="description">Static maps designed for publication and print, created in ArcGIS Pro and Adobe Illustrator.</p>
+
+  <div class="project">
+    <div class="project-info">
+      <p><b>Railroad Expansion in the US</b></p>
+    </div>
+    <div class="project-thumbnails">
+      <div class="thumb">
+        <img src="img/railroadMap.png" alt="map of current and proposed US passenger railways" onclick="openImage(this)">
+        <span class="overlay-text">US passenger railways</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-info">
+      <p><b>Various data driven Oregon maps</b></p>
+    </div>
+    <div class="project-thumbnails">
+      <div class="thumb">
+        <img src="img/state_resident_mobility.png" alt="map of oregon resident mobility" onclick="openImage(this)">
+        <span class="overlay-text">Oregon resident mobility</span>
+      </div>
+
+      <div class="thumb">
+        <img src="img/west_oregon_reference.png" alt="reference map of locations in oregon" onclick="openImage(this)">
+        <span class="overlay-text">Oregon reference map</span>
+      </div>
+
+      <div class="thumb">
+        <img src="img/WillamVal_Crop_Emissions_Visualization.jpg" alt="map of crop emissions in oregon" onclick="openImage(this)">
+        <span class="overlay-text">Crop emissions visualization</span>
+      </div>
+
+      <div class="thumb">
+        <img src="img/bryce_canyon_rasters.png" alt="bryce canyon dDEM images" onclick="openImage(this)">
+        <span class="overlay-text">Bryce Canyon DEMs</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="backToTop">Back to top ↑</a>
+</section>
+
+<!-- DATA VISUALIZATIONS -->
+<section id="visualizations" class="content-section">
+  <h3>Data Visualizations</h3>
+  <p class="description">Static and interactive projects revealing trends and spatial relations.</p>
+
+  <div class="project">
+    <div class="project-info">
+      <p><b>National Parks of the United States</b></p>
+    </div>
+    <div class="project-thumbnails">
+      <div class="thumb">
+        <img src="img/npsDashTop.png" alt="top of Dash app webpage" onclick="openImage(this)">
+        <span class="overlay-text">National Parks dashboard</span>
+      </div>
+      <div class="thumb">
+        <img src="img/npsDashBottom.png" alt="bottom of Dash app webpage" onclick="openImage(this)">
+        <span class="overlay-text">Dashboard (cont.)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+  <div class="project-info">
+    <p><b>TESS Planetary Discoveries</b><br>
+      <a href="https://public.tableau.com/app/profile/clare.otcasek/viz/TESSDiscoversDSCI410/Story1" target="_blank">
+        TESS Planetary Discoveries, hosted by Tableau
+      </a>
+    </p>
+  </div>
+  <div class="project-thumbnails">
+    <div class="thumb">
+      <img src="img/TESS_dots.png" alt="TESS dot graph" onclick="openImage(this)">
+      <span class="overlay-text">Planetary characteristic trends</span>
+    </div>
+    <div class="thumb">
+      <img src="img/TESS_bar.png" alt="Planet discovery count graph" onclick="openImage(this)">
+      <span class="overlay-text">Planet discovery count</span>
+    </div>
+<!--     <div class="thumb">
+      <img src="img/giumModal.png" alt="GIUM Species info modal example" onclick="openImage(this)">
+      <span class="overlay-text">Species Info Modal</span>
+    </div> -->
+  </div>
+</div>
+
+  <a href="#" class="backToTop">Back to top ↑</a>
+</section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="content-section">
+      <h3>About Me</h3>
+      <p>
+        I’m Clare Otcasek (she/her), data scientist and cartographer, residing in the majestic Pacific Northwest.  
+        I enjoy sharing stories visually through maps and data, focusing my work on conservation, public lands, art, and expression. 
+        I have experience in web mapping, print products, data processing and visualization, and computer programming.   
+        Building on a background in project management, business, and engineering, I bring a practical and systems-oriented perspective to my work in the geospatial field.
+      </p>
+      <a href="#" class="backToTop">Back to top ↑</a>
     </section>
 
-    <!-- CONTENT SECTIONS -->
-    <main>
-        <section id="webMaps" class="content-section">
-            <h3>Web Maps</h3>
-            <p>Interactive and dynamic web-based map projects built using JavaScript, Mapbox, and ArcGIS Online.</p>
-            <!-- add thumbnails or embeds here -->
-        </section>
+  </main>
 
-        <section id="printMaps" class="content-section">
-            <h3>Print Maps</h3>
-            <p>High-resolution static maps designed for publication and print, created in ArcGIS Pro and Adobe Illustrator.</p>
-        </section>
-
-        <section id="visualizations" class="content-section">
-            <h3>Data Visualizations</h3>
-            <p>Non-cartographic visualizations exploring spatial and demographic patterns through data storytelling.</p>
-        </section>
-
-        <section id="about" class="content-section">
-            <h3>About Me</h3>
-            <p>I’m Clare Otcasek, a geospatial analyst and designer with experience in web mapping, cartography, and data visualization. My work focuses on conservation, public lands, and spatial storytelling.</p>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
