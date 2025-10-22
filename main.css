@@ -36,6 +36,7 @@ body {
     /*font-family: "Helvetica Neue", Arial, sans-serif;*/
     font-family: "Quicksand", Arial, sans-serif;
     background-color: #f6f4ef;
+    /*background-color: #CFD7C7;*/
     color: #2c2c2c;
     line-height: 1.6;
 }
@@ -73,10 +74,12 @@ h1 {
 
 a:link {
     color: darkgrey;
+    color: #559CAD;
 }
 
 a:hover {
     font-weight: bold;
+    /*color: #8C5383;*/
 }
 
 /* GRID LAYOUT */
