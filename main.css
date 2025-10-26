@@ -66,11 +66,10 @@ h1 {
 
 .description{
     font-style: italic;
+    margin-bottom: 2rem;
 }
 
-.backToTop {
-    font-size: .9rem;
-}
+
 
 a:link {
     color: darkgrey;
@@ -150,11 +149,13 @@ a:hover {
 
 
 /* CONTENT SECTIONS */
+
 main {
-    padding: 3rem 1rem;
-    max-width: 900px;
+    padding: 3rem 2rem;              /* was 3rem 1rem — adds breathing room */
+    max-width: 1200px;               /* was 900px — allows larger map display */
     margin: 0 auto;
 }
+
 
 .content-section {
     margin-bottom: 4rem;
@@ -258,78 +259,79 @@ html {
 
 
 
-
-
-
-
 .project {
-  margin: 2rem 0;
+  /*margin: 4rem 0;*/
+  margin-bottom: 4rem;
 }
 
 .project-info p {
   margin-bottom: 0.5rem;
 }
 
-.project-thumbnails {
+
+
+/*.project-thumbnails {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 10px;
 
-}
-
-/*.project-thumbnails img {
-  width: 30%;
-  max-width: 250px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  aspect-ratio: 5 / 3; 
-  /* Keeps consistent thumbnail boxes */
-  /*object-fit: cover;   */
-  /* Ensures images fill box without distortion */
-  /*transform-origin: center center; */
-  /* ensures zoom happens from center */
-/*}*/
-
-/*.project-thumbnails img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 2; 
 }*/
 
 
-/* Thumbnail container */
-.thumb {
-  position: relative;
-  width: 22%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 6px;
-  cursor: pointer;
+
+
+
+
+
+/* --- PROJECT THUMBNAIL LAYOUT --- */
+/* Increase thumbnail size and spacing */
+.project-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;                         /* was 10px — more space between images */
+  margin-top: 1.5rem;                /* was 10px — improves section readability */
+  justify-content: center;           /* centers thumbnails neatly in wider layout */
 }
 
-/* Image inside thumbnail */
 /* Thumbnail container */
 .thumb {
   position: relative;
-  width: 48%;          /* two thumbnails per row with a small gap */
-  aspect-ratio: 4 / 3; /* maintains consistent box shape */
+  width: 48%;                        
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 10px;               
   cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.25); 
+  /*border: 4px solid transparent;*/
+  border-radius: 10px;  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Images inside thumbnail */
 .thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fills box without distortion */
+  object-fit: cover;
   transition: filter 0.3s ease, transform 0.5s ease;
   display: block;
 }
 
-/* Overlay text */
+/* On hover, make the box pop slightly */
+.thumb:hover {
+  transform: translateY(-0.25rem);             /* subtle lift */
+  /*box-shadow: 0 0.75rem 1.25rem rgba(0,0,0,0.25);*/
+}
+
+
+/* Keep your existing grayscale + zoom on hover */
+.thumb:hover img {
+  filter: grayscale(100%) brightness(60%);
+  transform: scale(1.05);
+}
+
+/* Overlay text unchanged */
 .overlay-text {
   position: absolute;
   top: 50%;
@@ -337,7 +339,7 @@ html {
   transform: translate(-50%, -50%);
   color: white;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -345,23 +347,21 @@ html {
   z-index: 2;
 }
 
-/* Hover effects */
-.thumb:hover img {
-  filter: grayscale(100%) brightness(60%);
-  transform: scale(1.05);
-}
-
 .thumb:hover .overlay-text {
   opacity: 1;
 }
 
-/* Make thumbnails stack nicely on small screens */
+
+/* Maintain mobile stacking behavior */
 @media (max-width: 600px) {
   .thumb {
-    width: 100%; /* single column on narrow screens */
-    margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 1.5rem;     
   }
 }
+
+
+
 
 
 .backToTop {
@@ -370,11 +370,69 @@ html {
   font-weight: bold;
   text-decoration: none;
   color: #4d4d4d;
+  font-size: .9rem;
 }
 
 
 .backToTop:hover {
   text-decoration: underline;
 }
+
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 4rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+/* Image inside lightbox */
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+/* Caption text */
+.caption {
+  color: #ccc;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Next and previous arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+  user-select: none;
+  transition: 0.3s;
+}
+.prev { left: 0; }
+.next { right: 0; }
+.prev:hover, .next:hover { color: #bbb; }
 
 
