@@ -92,13 +92,13 @@ h1 {
     color: white; 
     color: var(--main-bg);
     font-size: 2rem;
-    margin-bottom: .1rem;
+    /*margin-bottom: .1rem;*/
     font-family: "Funnel Display", sans-serif;
 }
 
 .sectionHeader {
-  width: 98.8vw;           /* full viewport width */
-  padding: .5rem 0rem .5rem .5rem;   /* adjust spacing as needed */
+  width: 98.5vw;           /* full viewport width */
+  padding: 1.5em 0rem .5rem 1.2rem;   /* adjust spacing as needed */
   color: white;            /* text color */
   color: var(--main-bg);
   /*background-color: var(--header-color, #333); /* default fallback */
@@ -128,13 +128,17 @@ h1 {
 
 
 a:link {
-    color: darkgrey;
+    /*color: darkgrey;*/
     color: #559CAD;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover {
-    font-weight: bold;
+    /*font-weight: bold;*/
     /*color: #8C5383;*/
+    text-decoration: underline
+
 }
 
 /* GRID LAYOUT */
