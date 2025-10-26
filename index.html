@@ -18,23 +18,27 @@
   <header>
     <div id='title'>Clare Otcasek</div>
     <!-- <br> -->
-    <div id='subtitle'> Cartography & Data Visualization </div>
+    <div id='subtitle'> Cartography  &middot;  Geospatial Analysis  &middot;  Data Visualization </div>
   </header>
 
   <!-- GRID NAVIGATION -->
   <section id="grid">
+    <div class="grid-item" data-target="about"><h2>About Me</h2></div>
     <div class="grid-item" data-target="webMaps"><h2>Web Maps</h2></div>
     <div class="grid-item" data-target="printMaps"><h2>Print Maps</h2></div>
     <div class="grid-item" data-target="visualizations"><h2>Data Visualizations</h2></div>
-    <div class="grid-item" data-target="about"><h2>About Me</h2></div>
+    
   </section>
 
   <!-- CONTENT SECTIONS -->
   <main>
 
   <!-- ABOUT -->
-  <section id="about" class="content-section">
+  <div id="aboutHeader" class="sectionHeader" data-color="#8A1C40">
     <h3>About Me</h3>
+  </div>
+  <section id="about" class="content-section">
+    
     <p>
       I’m Clare (she/her), data scientist and cartographer, residing in the majestic Pacific Northwest. 
       I am a graduate of the <b>University of Oregon</b>, and have recently completed a Bachelor's degree in <b>Data Science and Geography</b> from the University of Oregon.  During my time at U of O, I was introduced to the world of cartography and focused my techincal coursework on cartographic projects.  I continue to work in the <b>Infographics Lab</b> at the university, supporting a number of projects - including the migration focused web maps highlighted below.  <br><br>
@@ -53,9 +57,12 @@
   </section>
 
   <!-- WEB MAPS -->
-  <section id="webMaps" class="content-section">
+  <div id="webMapsHeader" class="sectionHeader" data-color="#347FC4">
     <h3>Web Maps</h3>
     <p class="description">Interactive and dynamic web-based map projects built using JavaScript, Mapbox, and ArcGIS.</p>
+  </div>
+  <section id="webMaps" class="content-section">
+    
 
      <!-- Project block -->
     <div class="project">
@@ -131,9 +138,12 @@
   </section>
 
   <!-- PRINT MAPS -->
-  <section id="printMaps" class="content-section">
+  <div id="printMapsHeader" class="sectionHeader" data-color="#EF8354">
     <h3>Print Maps</h3>
     <p class="description">Static maps designed for publication and print, created in ArcGIS Pro and Adobe Illustrator.</p>
+  </div>
+  <section id="printMaps" class="content-section">
+    
 
     <div class="project">
       <div class="project-info">
@@ -182,14 +192,17 @@
   </section>
 
   <!-- DATA VISUALIZATIONS -->
-  <section id="visualizations" class="content-section">
+  <div id="visualizationsHeader" class="sectionHeader" data-color="#3C896D">
     <h3>Data Visualizations</h3>
     <p class="description">Static and interactive projects revealing trends and spatial relations.</p>
+  </div>
+  <section id="visualizations" class="content-section">
+    
 
     <div class="project">
       <div class="project-info">
         <p><b>National Parks of the United States</b><br>
-        Final project for data visualization course final project, created using Python/Plotly/Dash and geopandas.</p>
+        Final project for data visualization course, created using Python/Plotly/Dash and geopandas.</p>
       </div>
        
       <div class="project-thumbnails">
@@ -244,6 +257,9 @@
   <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
   <a class="next" onclick="changeSlide(1)">&#10095;</a>
 </div>
+
+<a href="#" id="floatingBackToTop" title="Back to top">↑</a>
+
 
 <script src="script.js"></script>
 

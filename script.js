@@ -1,13 +1,25 @@
 // Smooth scroll to content when grid box clicked
+// document.querySelectorAll('.grid-item').forEach(item => {
+//     item.addEventListener('click', () => {
+//         const targetId = item.getAttribute('data-target');
+//         const targetSection = document.getElementById(targetId);
+//         if (targetSection) {
+//             targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//         }
+//     });
+// });
+
+// Smooth scroll to section header when grid box clicked
 document.querySelectorAll('.grid-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const targetId = item.getAttribute('data-target');
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
+  item.addEventListener('click', () => {
+    const targetId = item.getAttribute('data-target') + 'Header'; // add 'Header' suffix
+    const targetHeader = document.getElementById(targetId);
+    if (targetHeader) {
+      targetHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
+
 
 // Smooth scroll for "Back to top" links
 document.querySelectorAll('.back-to-top').forEach(link => {
@@ -17,6 +29,30 @@ document.querySelectorAll('.back-to-top').forEach(link => {
     });
 });
 
+const backBtn = document.getElementById('floatingBackToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {  // change 300 to your preferred scroll distance
+    backBtn.classList.add('show');
+  } else {
+    backBtn.classList.remove('show');
+  }
+});
+
+// Smooth scroll on click
+backBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
+//background for section headers
+document.querySelectorAll('.sectionHeader').forEach(header => {
+  const color = header.dataset.color;
+  if (color) {
+    header.style.backgroundColor = color;
+  }
+});
 // borders to match grid elements
 // document.addEventListener('DOMContentLoaded', () => {
 //   document.querySelectorAll('.thumb').forEach(thumb => {

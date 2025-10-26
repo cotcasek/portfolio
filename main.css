@@ -44,7 +44,7 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     background-color: #2e2a24;
     color: #fdfcf9;
     font-family: "Funnel Display", sans-serif;
@@ -55,18 +55,34 @@ h1 {
 }
 
 #title{
-    font-size: 2em;
+    font-size: 2.2em;
     letter-spacing: .2em;
+    text-align: left;
 }
 
 #subtitle{
-    font-size: 1.6em;
-    letter-spacing: .2em;
+    font-size: 1.5em;
+    letter-spacing: .15em;
+    text-align: right;
+}
+.sectionHeader h3 {
+    /*color: #2e2a24;*/
+    color: white; 
+    font-size: 2rem;
+    margin-bottom: .1rem;
+    font-family: "Funnel Display", sans-serif;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin: .5rem;
+    /*color: #333;*/
 }
 
 .description{
     font-style: italic;
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
+    color: white; 
 }
 
 
@@ -151,7 +167,7 @@ a:hover {
 /* CONTENT SECTIONS */
 
 main {
-    padding: 3rem 2rem;              /* was 3rem 1rem — adds breathing room */
+    /*padding: 3rem 2rem;              /* was 3rem 1rem — adds breathing room */*/
     max-width: 1200px;               /* was 900px — allows larger map display */
     margin: 0 auto;
 }
@@ -159,19 +175,25 @@ main {
 
 .content-section {
     margin-bottom: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
-.content-section h3 {
-    color: #2e2a24;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-family: "Funnel Display", sans-serif;
+
+.sectionHeader {
+  width: 100vw;           /* full viewport width */
+  padding: .5rem .5rem;   /* adjust spacing as needed */
+  color: white;            /* text color */
+  background-color: var(--header-color, #333); /* default fallback */
+  box-sizing: border-box;  /* ensures padding doesn’t overflow */
+  margin: 1rem 0;          /* spacing above/below */
 }
 
-.content-section p {
-    font-size: 1.1rem;
-    color: #333;
-}
+/*.sectionHeader .content-section{
+  color: white; 
+}*/
+
+
 
 /* Smooth scrolling */
 html {
@@ -434,5 +456,60 @@ html {
 .prev { left: 0; }
 .next { right: 0; }
 .prev:hover, .next:hover { color: #bbb; }
+
+
+/*#floatingBackToTop {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: #2e2a24;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.3);
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+#floatingBackToTop:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+*/
+#floatingBackToTop {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: #2e2a24;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.3);
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  opacity: 0;            /* initially invisible */
+  pointer-events: none;   /* not clickable while hidden */
+}
+#floatingBackToTop.show {
+  opacity: 0.8;           /* visible */
+  pointer-events: auto;    /* clickable */
+}
+#floatingBackToTop:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
 
 
