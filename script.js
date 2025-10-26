@@ -47,12 +47,26 @@ backBtn.addEventListener('click', (e) => {
 
 
 //background for section headers
-document.querySelectorAll('.sectionHeader').forEach(header => {
-  const color = header.dataset.color;
-  if (color) {
-    header.style.backgroundColor = color;
-  }
+// document.querySelectorAll('.sectionHeader').forEach(header => {
+//   const color = header.dataset.color;
+//   if (color) {
+//     header.style.backgroundColor = color;
+//   }
+// });
+
+//face background for section headers
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.sectionHeader').forEach(header => {
+    const baseColor = header.dataset.color;
+    if (baseColor) {
+      header.style.background = `linear-gradient(to right, 
+        ${baseColor}ff 0%, 
+        ${baseColor}ff 60%, 
+        ${baseColor}00 100%)`;
+    }
+  });
 });
+
 // borders to match grid elements
 // document.addEventListener('DOMContentLoaded', () => {
 //   document.querySelectorAll('.thumb').forEach(thumb => {
